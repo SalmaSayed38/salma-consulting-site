@@ -1,0 +1,75 @@
+:root {
+  --navy-dark: #0f172a;
+  --navy: #1e3a5f;
+  --cyan: #22d3ee;
+  --cyan-dark: #0891b2;
+  --text-dark: #0f172a;
+  --text-light: #f8fafc;
+  --text-muted: #64748b;
+  --bg-light: #ffffff;
+  --bg-alt: #f8fafc;
+  --radius: 12px;
+  --max-width: 1080px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background: var(--bg-light);
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.site-nav .logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.site-nav nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-nav nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.site-nav nav a:hover { color: var(--navy); }
+
+.site-footer {
+  text-align: center;
+  padding: 32px 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* HERO STYLES */
+
+/* HIGHLIGHTS STYLES */
+
+/* SERVICES STYLES */
+
+/* ABOUT STYLES */
+
+/* CONTACT STYLES */
+
+/* RESPONSIVE */
