@@ -87,7 +87,29 @@
     </section>
 
     <section id="contact" class="contact">
-      <!-- CONTACT CONTENT -->
+      <div class="contact-inner">
+        <h2>Let's talk about your next payments challenge</h2>
+        <p class="contact-subhead">Tell me a bit about what you're working on — I'll get back to you within a couple of days.</p>
+
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <button type="submit">Send message</button>
+
+          <p class="form-status" data-state="" role="status"></p>
+        </form>
+
+        <a class="linkedin-link" href="https://www.linkedin.com/in/salma-ssalem/" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+      </div>
     </section>
   </main>
 
