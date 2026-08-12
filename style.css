@@ -114,7 +114,33 @@ a { color: inherit; text-decoration: none; }
 
 .hero-cta:hover { background: #67e8f9; }
 
-/* HIGHLIGHTS STYLES */
+.highlights {
+  background: var(--bg-alt);
+  padding: 64px 24px;
+}
+
+.highlights-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.highlight-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.highlight-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
 
 /* SERVICES STYLES */
 
