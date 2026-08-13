@@ -16,9 +16,12 @@ through digital payments (Integrant, SEITech, and her current role).
 Fintech is where she's currently active and building visibility, but it is
 one proof point among several, not the whole pitch.
 
-This is a **content-only revision**. Visual style (Modern Fintech
-navy-to-cyan gradient), section order, HTML structure, CSS, and JS behavior
-are all unchanged from the original build — only the words change.
+This is primarily a **content revision**, plus one small visual addition:
+a real photo of Salma is now available and replaces the original site's
+"no photo" constraint in the About section only. Visual style (Modern
+Fintech navy-to-cyan gradient), section order, overall HTML structure, and
+JS behavior are otherwise unchanged from the original build — only the
+words change, plus the one photo addition described below.
 
 ## Constraints
 
@@ -35,9 +38,13 @@ one:
 - **GIM UEMOA / MTN MoMo Marketplace / Valeo / Integrant / SEITech** remain
   safe to name verbatim (platform names and past employers, not the
   current employer).
-- Free tools only, no build step — unchanged (this revision touches
-  `index.html` text content only; no new tooling, hosting, or backend
-  changes).
+- Free tools only, no build step — unchanged. This revision touches
+  `index.html` content, adds one static image asset
+  (`assets/headshot.jpg`) and one CSS rule for it; no new tooling,
+  hosting, or backend changes.
+- **No professional photo available** (from the original spec) is
+  superseded: a headshot is now available and used, but only in the
+  About section — see the Photo section below.
 
 ## Positioning
 
@@ -50,10 +57,41 @@ domain-expert claim.
 
 ## Scope
 
-Content-only rewrite of `index.html`. No changes to `style.css`,
-`script.js`, section structure, grid layouts, or card counts (Highlights
-stays 4 cards, Services stays 3 cards). Confirmed with the user: this is
-not a visual redesign.
+Content rewrite of `index.html`, plus one new image asset and its
+supporting CSS. No changes to section order, `script.js`, or the
+Highlights/Services grid layouts or card counts. Confirmed with the user:
+this is not a broader visual redesign — the hero stays text/monogram-led
+("SS"), and the only visual addition is the About-section photo below.
+
+## Photo
+
+A real photo of Salma is now available and supersedes the original
+spec's "No professional photo available" constraint, but only for the
+About section — the user explicitly chose to keep the Hero as-is
+(monogram "SS", no photo) rather than replace the hero's visual anchor.
+
+- **Source:** a close headshot (not the alternate full-body conference
+  photo, which had a busy backdrop with an event/company logo — avoided
+  given the no-employer-reveal constraint).
+- **Processing done:** cropped to a top-aligned square (full smile, chin,
+  and shoulders visible — tighter crops cut the chin off), resized to
+  480×480, re-encoded as a fresh JPEG so no camera EXIF/GPS metadata is
+  carried into the repo.
+- **Asset path:** `assets/headshot.jpg` (new `assets/` directory at repo
+  root — first binary asset in this otherwise-flat file structure).
+- **Placement:** About section only, alongside the existing
+  `.about-inner` two-column grid (about-text + credentials). The photo
+  becomes a circular image (matching the site's existing circle/monogram
+  motif from the hero), styled with a cyan accent border consistent with
+  `--cyan`, positioned above the credentials list within the credentials
+  column.
+- **Markup:** `<img class="about-photo" src="assets/headshot.jpg"
+  alt="Salma Salem" width="480" height="480" loading="lazy">` — explicit
+  width/height to avoid layout shift, `loading="lazy"` since it's below
+  the fold, descriptive alt text for accessibility.
+- **Responsive:** at the existing `about-inner` mobile breakpoint (where
+  the two-column grid collapses to one column), the photo stacks above
+  the credentials list, same as the rest of that column's content.
 
 ## Content changes
 
@@ -133,7 +171,8 @@ no-licensing/regulatory-expert boundary (new constraint):
 > regulatory or licensing specialist — I'm the person who gets people,
 > timelines, and partners aligned so the work actually ships.`
 
-Credentials list (MBA, PMP, CSM) is unchanged.
+Credentials list (MBA, PMP, CSM) is unchanged. The `about-photo` image
+(see Photo section above) is added to this section's markup.
 
 ### Contact
 
@@ -150,10 +189,13 @@ footer copyright were never industry-specific.
 
 ## Non-goals
 
-- No visual/style/layout changes.
+- No broader visual/style/layout changes beyond the one About-section
+  photo addition described above — the hero, gradient, typography, and
+  overall layout are untouched.
 - No new sections, no removed sections, no change to card counts.
-- No changes to `style.css`, `script.js`, `README.md`, or any
-  functionality (form submission behavior, responsive breakpoints, etc.).
+- No changes to `script.js`, `README.md`, or any existing functionality
+  (form submission behavior, responsive breakpoints, etc.) — `style.css`
+  gets one additive rule for `.about-photo`, nothing else in it changes.
 - LinkedIn profile updates are out of scope for this spec/plan — handled
   as a separate recommendation to the user, not a website deliverable.
 
@@ -174,3 +216,9 @@ content-only change). Verification via `grep`:
   Consulting" / "Advisory & Retainer" as card titles, old Contact heading)
   no longer appear, so this is a clean replacement rather than a
   duplication.
+- Confirm `assets/headshot.jpg` exists, is referenced from `index.html`
+  with correct `src`/`alt`/`width`/`height`, and that no other image
+  assets or `<img>` tags were introduced (hero stays photo-free).
+- Manual visual check: photo renders correctly inside the About section
+  at desktop, tablet, and mobile widths (circular crop, no distortion,
+  reasonable stacking order on mobile).
