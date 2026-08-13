@@ -206,11 +206,24 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
 }
 
+.about-side {
+  align-self: start;
+}
+
+.about-photo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--cyan);
+  margin-bottom: 24px;
+}
+
 .credentials {
   list-style: none;
   border-left: 2px solid var(--cyan);
   padding-left: 20px;
-  align-self: start;
 }
 
 .credentials li {
