@@ -126,9 +126,13 @@ a { color: inherit; text-decoration: none; }
 
 .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
 }
+
+.highlight-card { grid-column: span 2; }
+.highlight-card:nth-child(4) { grid-column: 2 / span 2; }
+.highlight-card:nth-child(5) { grid-column: 4 / span 2; }
 
 .highlight-card h3 {
   font-size: 18px;
@@ -309,6 +313,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 768px) {
   .hero h1 { font-size: 32px; }
   .highlight-grid { grid-template-columns: repeat(2, 1fr); }
+  .highlight-card,
+  .highlight-card:nth-child(4) { grid-column: auto; }
+  .highlight-card:nth-child(5) { grid-column: 1 / -1; }
   .service-grid { grid-template-columns: 1fr; }
   .about-inner { grid-template-columns: 1fr; }
 }
@@ -317,5 +324,6 @@ a { color: inherit; text-decoration: none; }
   .site-nav { flex-direction: column; align-items: flex-start; gap: 12px; }
   .hero { padding: 64px 20px; }
   .highlight-grid { grid-template-columns: 1fr; }
+  .highlight-card:nth-child(5) { grid-column: auto; }
   .credentials { border-left: none; border-top: 2px solid var(--cyan); padding-left: 0; padding-top: 16px; }
 }
